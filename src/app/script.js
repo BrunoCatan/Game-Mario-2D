@@ -30,7 +30,6 @@ const loop = setInterval(() => {
         setTimeout(() => {
             location.reload();
         },200)
-        
     }
     
 },10)
