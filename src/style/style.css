@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: SuperMario256;
+    src: url(../fonts/SuperMario256.ttf);
+}
+
 .game.board {
+    display: flex;
     width: 100%;
-    height: 500px;
+    height: 80vh;
     border-bottom: 15px solid green;
     margin: 0 auto;
     position: relative;
@@ -35,6 +41,19 @@
     position: absolute;
     width: 450px;
     animation: clouds-animation 15s infinite linear;
+}
+
+#vai-tremer {
+    /* apenas para dar um formato a div */
+    position: relative;
+    text-align: center;
+    font-family: SuperMario256, sans-serif;
+    font-weight: bolder;
+    font-size: 4vh;
+    margin-top: 4%;
+    color: #483705;
+    animation: tremer .2s;
+    animation-iteration-count: 4;
 }
 
 @keyframes pipe-animation {
@@ -76,5 +95,23 @@
 
     to {
         right: 100%;
+    }
+}
+
+@keyframes tremer {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 7px;
+    }
+    50% {
+        margin-left: 0;
+    }
+    75% {
+        margin-left: -7px;
+    }
+    100% {
+        margin-left: 0;
     }
 }
