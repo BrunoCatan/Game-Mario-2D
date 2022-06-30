@@ -23,12 +23,12 @@
 .pipe {
     position: absolute;
     bottom: 0;
-    width: 80px;
+    width: 8vmax;
     animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
-    width: 150px;
+    width: 13vmax;
     position: absolute;
     bottom: 0;
 }
@@ -39,7 +39,7 @@
 
 .clouds {
     position: absolute;
-    width: 450px;
+    width: 40vw;
     animation: clouds-animation 15s infinite linear;
 }
 
@@ -57,7 +57,7 @@
 
 @keyframes pipe-animation {
     from {
-        right: -80px;
+        right: -80%;
     }
 
     to {
@@ -71,15 +71,15 @@
     }
 
     40% {
-        bottom: 180px;
+        bottom: 25vmax;
     }
 
     50% {
-        bottom: 180px;
+        bottom: 25vmax;
     }
 
     60% {
-        bottom: 180px;
+        bottom: 25vmax;
     }
 
     100% {
@@ -89,7 +89,7 @@
 
 @keyframes clouds-animation {
     from {
-        right: -450px;
+        right: -45vmax;
     }
 
     to {
