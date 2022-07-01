@@ -1,4 +1,4 @@
-# Mini Game Mario
+#Mini Game Mario
 
 Projeto disponivel na versão desktop e mobile.
 
