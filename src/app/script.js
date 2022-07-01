@@ -1,5 +1,9 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const clouds = document.querySelector('.clouds');
+const score = document.getElementById('pontos')
+
+let ponto = 0
 
 const jump = () => {
     mario.classList.add('jump');
@@ -9,16 +13,20 @@ const jump = () => {
     },500)
 }
 
-const loop = setInterval(() => {
+document.addEventListener('keydown', jump)
 
+const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
+    const cloudsPosition = clouds.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-    console.log(pipePosition)
 
     if (pipePosition <= 80 && pipePosition > 0 && marioPosition < 60) {
         
         pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`
+
+        clouds.style.animation = "none"
+        clouds.style.left = `${cloudsPosition}px`
 
         mario.style.animation = "none";
         mario.style.bottom = `${marioPosition}px`
@@ -28,11 +36,18 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '2%'
 
         clearInterval(loop)
+        clearInterval(pontuacao)
         setTimeout(() => {
             location.reload();
-        },300)
+        },1000)
     }
-    
 },10)
 
-document.addEventListener('keydown', jump)
+const pontuacao = setInterval(() => {
+    ponto++
+    atualizaValor()
+}, 50);
+
+function atualizaValor(){
+    score.innerHTML = ponto
+}
