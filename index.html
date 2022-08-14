@@ -10,16 +10,23 @@
 <body>
     <div class="game board" onclick="jump()">
 
-        <div class="score">
+        <div class="modalScore">
             <p>Score</p>
             <p>:</p>
-            <p id="pontos">00</p>
+            <p id="score">00</p>
         </div>
 
         <img src="./src/imgs/clouds.png" class="clouds">
         <img src="./src/imgs/pipe.png" class="pipe">
         <img src="./src/imgs/mario.gif" class="mario">
 
+
+
+        <div class="modal invisible">
+            <p>Game over !</p>
+            <p class="scoreGameOver"></p>
+            <button class="btnRestart">Restart</button>
+        </div>
     </div>
 
     <div id="vai-tremer">Use qualquer tecla para pular ou clique na tela</div>

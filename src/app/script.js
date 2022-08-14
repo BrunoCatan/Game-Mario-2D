@@ -1,9 +1,14 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
-const score = document.getElementById('pontos')
+const score = document.querySelector('#score');
+const modalRestart = document.querySelector('.modal');
+const btnRestart = document.querySelector('.btnRestart');
+const scoreGamerOver = document.querySelector('.scoreGameOver');
+const modalScore = document.querySelector('.modalScore')
 
-let ponto = 0
+
+let count = 0
 
 const jump = () => {
     mario.classList.add('jump');
@@ -35,19 +40,35 @@ const loop = setInterval(() => {
         mario.style.width = '8vmax'
         mario.style.marginLeft = '2%'
 
+        modalRestart.classList.remove("invisible");
+        modalScore.classList.add("invisible");
+        scoreGamerOver.innerText = `Voce fez ${count} pontos`;
+
         clearInterval(loop)
         clearInterval(pontuacao)
-        setTimeout(() => {
-            location.reload();
-        },1000)
     }
 },10)
 
 const pontuacao = setInterval(() => {
-    ponto++
+    count++
     atualizaValor()
 }, 50);
 
 function atualizaValor(){
-    score.innerHTML = ponto
+    score.innerHTML = count
 }
+
+function modal(){
+    gameOverModal.classList.remove('jump')
+
+    setTimeout(() => {
+        mario.classList.remove('jump');
+    },500)
+}
+
+function restart(){
+    modalRestart.classList.add("invisible");
+    document.location.reload();
+}
+
+btnRestart.addEventListener('click', restart)

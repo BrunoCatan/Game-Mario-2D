@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: SuperMario256, sans-serif;
 }
 
 @font-face {
@@ -20,7 +21,7 @@
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
-.score {
+.modalScore {
     display: flex;
     z-index: 1;
     justify-content: center;
@@ -29,10 +30,9 @@
     height: 20vh;
 }
 
-.score p {
+.modalScore p {
     color: white;
-    font-size: 8vh;
-    font-family: SuperMario256, sans-serif;
+    font-size: 6vh;
     margin: 0 0.3%;
     -webkit-text-stroke: .3vh red;
 }
@@ -63,13 +63,46 @@
 #vai-tremer {
     position: relative;
     text-align: center;
-    font-family: SuperMario256, sans-serif;
     font-weight: bolder;
     font-size: 4vh;
     margin-top: 4%;
     color: #483705;
     animation: tremer .2s;
     animation-iteration-count: 4;
+}
+
+.modal {
+    display:flex;
+    position:absolute;
+    top:40%;
+    font-size:3vw;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 20vh;
+}
+
+.modal p {
+    margin: 2%;
+    color: white;
+    font-size: 5vh;
+    -webkit-text-stroke: .2vh red;
+    text-align: center;
+}
+
+.modal button {
+    padding: 1.8%;
+    color: white;
+    margin-top: 2%;
+    background-color: green;
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+.invisible {
+    display: none;    
 }
 
 @keyframes pipe-animation {
