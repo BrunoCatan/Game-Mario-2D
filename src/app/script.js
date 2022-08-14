@@ -8,7 +8,7 @@ const scoreGamerOver = document.querySelector('.scoreGameOver');
 const modalScore = document.querySelector('.modalScore')
 
 
-let count = 0
+let count = 0;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -18,7 +18,7 @@ const jump = () => {
     },500)
 }
 
-document.addEventListener('keydown', jump)
+document.addEventListener('keydown', jump);
 
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
@@ -71,6 +71,4 @@ function restart(){
     document.location.reload();
 }
 
-btnRestart.addEventListener('click', restart)
-
-// 
+btnRestart.addEventListener('click', restart);
