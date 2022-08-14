@@ -72,3 +72,5 @@ function restart(){
 }
 
 btnRestart.addEventListener('click', restart)
+
+// 
